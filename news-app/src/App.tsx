@@ -38,6 +38,7 @@ function App(): React.FC {
             background: 'white',
             borderRadius: '8px',
           }}
+          className="underline"
         >
           Content
         </div>
