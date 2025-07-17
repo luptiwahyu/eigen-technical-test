@@ -1,51 +1,25 @@
-import React from 'react'
+import { FC } from 'react'
 import './App.css'
 import { Layout } from 'antd'
+import { BrowserRouter, Routes, Route } from "react-router";
+import Header from './shared/components/Header'
+import Footer from './shared/components/Footer'
+import ArticleList from './features/articles/pages/List'
 
-const { Header, Content, Footer } = Layout
+const { Content } = Layout
 
-function App(): React.FC {
-  const currentYear: Number = new Date().getFullYear()
-
+const App: FC = () => {
   return (
     <Layout>
-      <Header
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 1,
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        <div
-          style={{
-            color: 'white',
-            fontSize: '20px',
-            fontWeight: 500,
-            margin: '0 auto',
-          }}
-        >
-          News App
-        </div>
-      </Header>
+      <Header />
       <Content style={{ padding: '48px' }}>
-        <div
-          style={{
-            padding: 24,
-            minHeight: 380,
-            background: 'white',
-            borderRadius: '8px',
-          }}
-          className="underline"
-        >
-          Content
-        </div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<ArticleList />} />
+          </Routes>
+        </BrowserRouter>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        Lupti Wahyu ©{currentYear}
-      </Footer>
+      <Footer />
     </Layout>
   )
 }
