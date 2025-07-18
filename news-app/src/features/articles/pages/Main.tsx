@@ -3,7 +3,7 @@ import { Row, Col } from 'antd'
 import Article from '../components/Article'
 import Detail from '../components/Detail'
 
-const List: FC = () => {
+const Main: FC = () => {
   const articles = [1,2,3,4,5]
   const [detailVisible, setDetailVisible] = useState<boolean>(false)
 
@@ -32,4 +32,4 @@ const List: FC = () => {
   )
 }
 
-export default List
+export default Main

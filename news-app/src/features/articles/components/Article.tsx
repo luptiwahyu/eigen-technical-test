@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { Card } from 'antd'
-import { Typography } from 'antd'
+import { Card, Typography } from 'antd'
 import type { ArticleProps } from '../models/ArticleProps'
 
 const { Title, Text } = Typography
