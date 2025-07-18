@@ -1,10 +1,15 @@
 import { FC } from 'react'
 import { Card, Typography } from 'antd'
 import type { ArticleProps } from '../models/ArticleProps'
+import { formattedDate } from '../../../shared/utils/date'
 
 const { Title, Text } = Typography
 
-const Article: FC<ArticleProps> = ({ clickable, onClick }) => {
+const Article: FC<ArticleProps> = ({ clickable, onClick, article }) => {
+  const shortText = (value: string, limit: number): string => {
+    return value?.slice(0, limit)
+  }
+
   const showDetail = (): void => {
     if (clickable) onClick()
   }
@@ -16,7 +21,7 @@ const Article: FC<ArticleProps> = ({ clickable, onClick }) => {
         hoverable
         cover={
           <img
-            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+            src={article.urlToImage}
             alt="thumbnail"
             className="object-cover"
             style={{ maxHeight: "150px" }}
@@ -28,13 +33,13 @@ const Article: FC<ArticleProps> = ({ clickable, onClick }) => {
           className={`!font-medium ${clickable ? 'hover:underline cursor-pointer' : ''}`}
           onClick={showDetail}
         >
-          Europe Street Beat
+          {shortText(article.title, 21)}...
         </Title>
         <Text className="text-primary">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugit, asperiores aliquam non corporis necessitatibus vel provident cumque natus illum sed. Odio illo, amet ex molestias quidem perspiciatis maxime tempore.
+          {shortText(article.description, 51)}...
         </Text>
         <div className="mt-4">
-          <Text type="secondary">Published: July 16, 2025</Text>
+          <Text type="secondary">Published: {formattedDate(article.publishedAt)}</Text>
         </div>
       </Card>
     </>

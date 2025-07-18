@@ -5,6 +5,7 @@ const { Header } = Layout
 const AppHeader: FC = () => {
   return (
     <Header
+      className="shadow-xl"
       style={{
         position: 'sticky',
         top: 0,
