@@ -19,7 +19,7 @@ const Article: FC<ArticleProps> = ({ clickable, onClick }) => {
             src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
             alt="thumbnail"
             className="object-cover"
-            style={{ height: "200px" }}
+            style={{ maxHeight: "150px" }}
           />
         }
       >
@@ -30,7 +30,7 @@ const Article: FC<ArticleProps> = ({ clickable, onClick }) => {
         >
           Europe Street Beat
         </Title>
-        <Text style={{ color: "#737373" }}>
+        <Text className="text-primary">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugit, asperiores aliquam non corporis necessitatibus vel provident cumque natus illum sed. Odio illo, amet ex molestias quidem perspiciatis maxime tempore.
         </Text>
         <div className="mt-4">

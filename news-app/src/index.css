@@ -3,3 +3,7 @@
 body {
   margin: 0;
 }
+
+.text-primary {
+  color: #737373;
+}
